@@ -13,8 +13,7 @@ export async function up(knex: Knex) {
     table.string('about').notNullable();
     table.string('website').notNullable();
     table.string('tipo').notNullable();
-    table.string('precoMin').notNullable();
-    table.string('precoMax').notNullable();
+    table.string('preco').notNullable();
   });
 }
 

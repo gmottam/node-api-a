@@ -16,8 +16,7 @@ class PointsController {
       about,
       website,
       tipo,
-      precoMin,
-      precoMax
+      preco
     } = request.body;
 
     const trx = await knex.transaction();
@@ -33,8 +32,7 @@ class PointsController {
       about,
       website,
       tipo,
-      precoMin,
-      precoMax
+      preco
     };
 
     console.log(point);
@@ -133,6 +131,18 @@ class PointsController {
       .join('point_items', 'points.id', '=', 'point_items.point_id')
       .where('tipo', String(tipo))
       .where('name', 'like', `%${name}%`)
+      .distinct()
+      .select('points.*');
+    return response.json(points)
+  }
+
+  async indexPrice(request: Request, response: Response) {
+    const { priceMin, priceMax } = request.query;
+
+    const points = await knex('points')
+      .join('point_items', 'points.id', '=', 'point_items.point_id')
+      .where('preco', 'like', `%${priceMin}%`)
+      .where('preco', 'like', `%${priceMax}%`)
       .distinct()
       .select('points.*');
     return response.json(points)
