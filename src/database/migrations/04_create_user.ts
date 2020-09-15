@@ -6,6 +6,7 @@ export async function up(knex: Knex) {
     table.string('usuario').notNullable();
     table.string('senha').notNullable();
     table.string('email').notNullable();
+    table.string('cpf_cnpj').notNullable();
   });
 }
 

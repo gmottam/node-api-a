@@ -6,7 +6,8 @@ class UsersController {
     const {
       usuario,
       senha,
-      email
+      email,
+      cpf_cnpj
     } = request.body;
 
     const trx = await knex.transaction();
@@ -14,7 +15,8 @@ class UsersController {
     const user = {
       usuario,
       senha,
-      email
+      email,
+      cpf_cnpj
     };
 
     const insertedIds = await trx('users').insert(user);
@@ -25,10 +27,10 @@ class UsersController {
   }
 
   async index(request: Request, response: Response) {
-    const { usuario, senha } = request.query;
+    const { cpf_cnpj, senha } = request.query;
 
     const user = await knex('users')
-      .where('usuario', String(usuario))
+      .where('cpf_cnpj', String(cpf_cnpj))
       .where('senha', String(senha))
       .distinct()
       .select('users.*');

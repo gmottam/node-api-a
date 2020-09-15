@@ -15,7 +15,9 @@ class PointsController {
       items,
       about,
       website,
-      tipo
+      tipo,
+      precoMin,
+      precoMax
     } = request.body;
 
     const trx = await knex.transaction();
@@ -30,7 +32,9 @@ class PointsController {
       uf,
       about,
       website,
-      tipo
+      tipo,
+      precoMin,
+      precoMax
     };
 
     console.log(point);
