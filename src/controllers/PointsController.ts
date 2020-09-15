@@ -147,6 +147,18 @@ class PointsController {
     return response.json(points)
   }
 
+  async indexPriceType(request: Request, response: Response) {
+    const { priceMin, priceMax, tipo } = request.query;
+
+    const points = await knex('points')
+      .join('point_items', 'points.id', '=', 'point_items.point_id')
+      .where('tipo', String(tipo))
+      .whereBetween('preco', [Number(priceMin), Number(priceMax)])
+      .distinct()
+      .select('points.*');
+    return response.json(points)
+  }
+
 }
 
 export default PointsController;
