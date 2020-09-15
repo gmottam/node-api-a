@@ -23,7 +23,6 @@ routes.get('/pointsName', pointsController.indexName);
 routes.get('/pointsNameType', pointsController.indexNameType)
 routes.get('/pointsPrice', pointsController.indexPrice)
 
-
 routes.post('/comments', commentsController.create);
 
 routes.post('/users', usersController.create);
