@@ -141,8 +141,7 @@ class PointsController {
 
     const points = await knex('points')
       .join('point_items', 'points.id', '=', 'point_items.point_id')
-      .where('preco', 'like', `%${priceMin}%`)
-      .where('preco', 'like', `%${priceMax}%`)
+      .whereBetween('preco', [Number(priceMin), Number(priceMax)])
       .distinct()
       .select('points.*');
     return response.json(points)
