@@ -9,7 +9,7 @@ export async function seed(knex: Knex) {
     { title: 'Guarda Volumes', image: 'Guarda_Volumes.svg' },
     { title: 'Lanchonete', image: 'Lanchonete.svg' },
     { title: 'Nutricionista', image: 'Nutricionista.svg' },
-    { title: 'Personal_Trainner', image: 'Personal_Trainner.svg' },
+    { title: 'Personal Trainner', image: 'Personal_Trainner.svg' },
     { title: 'Piscina', image: 'Piscina.svg' },
     { title: 'Quadra', image: 'Quadra.svg' },
     { title: 'Vestiarios', image: 'Vestiarios.svg' },
