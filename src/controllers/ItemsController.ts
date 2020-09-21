@@ -9,7 +9,7 @@ class ItemsController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `../uploads/${item.image}`
+        image_url: `https://github.com/gmottam/node-api-a/blob/master/uploads/${item.image}`
       };
     })
 
