@@ -13,7 +13,7 @@ export async function seed(knex: Knex) {
     { title: 'Piscina', image: 'Piscina.svg' },
     { title: 'Quadra', image: 'Quadra.svg' },
     { title: 'Vestiarios', image: 'Vestiarios.svg' },
-    { title: 'Wifi', image: 'Wifi.svg' },
+    { title: 'wifi', image: 'wifi.svg' },
     { title: 'Workshop', image: 'Workshop.svg' }
   ]);
 }
