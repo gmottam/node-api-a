@@ -19,6 +19,7 @@ class UsersController {
       cpf_cnpj
     };
 
+
     const insertedIds = await trx('users').insert(user);
 
     await trx.commit();
