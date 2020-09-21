@@ -78,7 +78,7 @@ class PointsController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `http://localhost:3333/uploads/${item.image}`
+        image_url: `https://github.com/gmottam/node-api-a/blob/master/uploads/${item.image}`
       };
     })
 
